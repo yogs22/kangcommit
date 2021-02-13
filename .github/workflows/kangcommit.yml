@@ -22,7 +22,22 @@ jobs:
           git config --local user.email "yogi.enjoyers22@gmail.com"
           git config --local user.name "Yogi Prasetyawan"
           git add -A
-          git commit -m "Sebuah pesan"
+
+          arr[0]="quote: 😂 If you let your head get too big, it’ll break your neck."
+          arr[1]="quote: 😱 The road to success is dotted with many tempting parking spaces."
+          arr[2]="quote: 👿 A diamond is merely a lump of coal that did well under pressure."
+          arr[3]="quote: 💩 Women who seek to be equal with men lack ambition."
+          arr[4]="quote: 🙏 The best things in life are actually really expensive."
+          arr[5]="quote: 🙈 Bad decisions make good stories."
+          arr[6]="quote: 🐐 Dreams are like rainbows. Only idiots chase them."
+          arr[7]="quote: 🚀 If the world didn’t suck we’d all fly into space."
+          arr[8]="quote: 🕺 Always remember that you are unique – just like everybody else."
+          arr[9]="quote: 🎓 People say nothing is impossible, but I do nothing every day."
+          arr[10]="quote: 👒 You can’t have everything. Where would you put it?"
+
+          rand=$[$RANDOM % ${#arr[@]}]
+
+          git commit -m "${arr[$rand]}"
       - name: Push Back
         uses: ad-m/github-push-action@v0.5.0
         with:
